@@ -6,9 +6,11 @@ $('.modal-launch-button').on('click', function(e) {
     $('.modal-content').focus();
     $('.modal-live-text').html('The modal is opening');
     $('.modal-content').removeClass('m-closed').addClass('m-open');
+    $(this).attr('aria-hidden', 'true');
   }else if ($('.modal-content').hasClass('m-open')) {
     $('.modal-live-text').html('The modal is closing');
     $('.modal-content').removeClass('m-open').addClass('m-closed');
+    $(this).attr('aria-hidden', 'false');
   }
 });
 
